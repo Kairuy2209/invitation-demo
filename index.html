@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lời Mời Tốt Nghiệp!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a472a;
+            --secondary: #d4af37;
+            --accent: #8B4513;
+            --light: #F5F5F5;
+            --dark: #1A1A1A;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light);
+            scroll-behavior: smooth;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a472a 0%, #2d5a3b 50%, #1a472a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gradient-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .text-shadow {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .card {
+            background-color: #FFFFFF;
+            border-radius: 1rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #E5E7EB;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn {
+            transition: all 0.3s ease;
+            font-weight: 600;
+            border-radius: 0.75rem;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .countdown-item {
+            min-width: 90px;
+            border-radius: 0.75rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, var(--secondary) 50%, transparent 100%);
+            margin: 3rem auto;
+            width: 80%;
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translate(0, 0px);
+            }
+
+            50% {
+                transform: translate(0, -10px);
+            }
+
+            100% {
+                transform: translate(0, -0px);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .profile-img {
+            border: 4px solid white;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.5s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery-img {
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .elegant-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .memory-item {
+            position: relative;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            height: 200px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .memory-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Banner improvements */
+        .banner-decoration {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .banner-shape-1 {
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .banner-shape-2 {
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .graduation-cap {
+            animation: float-cap 6s ease-in-out infinite;
+        }
+
+        @keyframes float-cap {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f0f0f0;
+            opacity: 0.7;
+            animation: confetti-fall 5s linear infinite;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Hiệu ứng "Còn nhiều kỷ niệm" */
+        .more-memories {
+            background: linear-gradient(135deg, #1a472a 0%, #2d5a3b 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .more-memories::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.3) 0%, transparent 70%);
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+
+        .more-memories:hover::before {
+            opacity: 0.8;
+        }
+
+        .more-memories-content {
+            position: relative;
+            z-index: 2;
+            padding: 1.5rem;
+        }
+
+        .more-memories i {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        .more-memories p {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .more-memories span {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #ffd700;
+            border-radius: 50%;
+            opacity: 0;
+            animation: sparkle 3s infinite;
+        }
+
+        @keyframes sparkle {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+        }
+
+        /* Tối ưu responsive cho điện thoại */
+        @media (max-width: 768px) {
+
+            /* Hero section */
+            .hero-content h1 {
+                font-size: 2.5rem !important;
+                line-height: 1.2;
+            }
+
+            .hero-content h2 {
+                font-size: 1.2rem !important;
+            }
+
+            .hero-content p {
+                font-size: 1rem !important;
+            }
+
+            /* Ảnh cá nhân */
+            .profile-img {
+                width: 120px !important;
+                height: 120px !important;
+            }
+
+            /* Countdown */
+            #countdown {
+                gap: 0.5rem !important;
+                padding: 1rem !important;
+            }
+
+            .countdown-item {
+                min-width: 70px !important;
+                padding: 0.75rem !important;
+            }
+
+            .countdown-item div:first-child {
+                font-size: 1.75rem !important;
+            }
+
+            .countdown-item div:last-child {
+                font-size: 0.75rem !important;
+            }
+
+            /* Card layout */
+            .card {
+                padding: 1.5rem !important;
+            }
+
+            /* Grid layout */
+            .grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+
+            /* Memory grid */
+            .memory-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
+                gap: 1rem !important;
+            }
+
+            .memory-item {
+                height: 150px !important;
+            }
+
+            /* Section divider */
+            .section-divider {
+                margin: 2rem auto !important;
+            }
+
+            /* Footer */
+            footer .w-20 {
+                width: 60px !important;
+                height: 60px !important;
+            }
+
+            /* Modal */
+            #rsvp-modal,
+            #zalo-modal {
+                padding: 1rem !important;
+            }
+
+            .modal-content {
+                padding: 1.5rem !important;
+            }
+
+            /* Button */
+            .btn {
+                padding: 0.75rem 1.5rem !important;
+                font-size: 1rem !important;
+            }
+
+            /* Text sizing */
+            h2 {
+                font-size: 1.75rem !important;
+            }
+
+            h3 {
+                font-size: 1.5rem !important;
+            }
+
+            p {
+                font-size: 0.9rem !important;
+            }
+
+            /* Message section */
+            .flex-col.md\:flex-row {
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+
+            .w-32 {
+                width: 100px !important;
+                height: 100px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            /* Thêm tối ưu cho màn hình rất nhỏ */
+            .hero-content h1 {
+                font-size: 2rem !important;
+            }
+
+            .countdown-item {
+                min-width: 60px !important;
+                padding: 0.5rem !important;
+            }
+
+            .countdown-item div:first-child {
+                font-size: 1.5rem !important;
+            }
+
+            .memory-grid {
+                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)) !important;
+            }
+
+            .memory-item {
+                height: 130px !important;
+            }
+
+            .card {
+                padding: 1rem !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="text-gray-900">
+    <!-- Hero Section với ảnh cá nhân -->
+    <div
+        class="min-h-screen flex flex-col items-center justify-center p-4 text-center relative overflow-hidden gradient-bg text-white">
+        <div class="banner-decoration">
+            <div class="banner-shape-1"></div>
+            <div class="banner-shape-2"></div>
+        </div>
+
+        <!-- Confetti Effect -->
+        <div id="confetti-container" class="absolute inset-0 overflow-hidden pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto hero-content">
+            <header class="py-8 md:py-16">
+                <!-- Ảnh cá nhân ở phần hero -->
+                <div class="mb-6 md:mb-8 flex justify-center">
+                    <div class="relative">
+                        <!-- THAY THẾ ẢNH CỦA BẠN BẰNG URL SAU KHI TẢI LÊN -->
+                        <img id="hero-profile-img"
+                            src="https://scontent.fsgn23-1.fna.fbcdn.net/v/t39.30808-1/555641881_2021594518595163_2171926551360322654_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=110&ccb=1-7&_nc_sid=e99d92&_nc_ohc=vsyEKhHzoo0Q7kNvwGTgM6P&_nc_oc=AdlsRN4Nc3YiV9IWaVCGlIrv4xQSuU7qCLkXl8Kt2pkWU5OSvlzCzuYkYLhMuEAbipFXc3ftvbrcAUxmmo6LnjOL&_nc_zt=24&_nc_ht=scontent.fsgn23-1.fna&_nc_gid=Y1EkyepNqMOv4k94RUmR-w&oh=00_AfbGG2sphfopeiyaIL-CRxQdgyp8IECLQrdSDd68lncYEA&oe=68E2B050"
+                            alt="Ảnh của tôi" class="w-32 h-32 md:w-48 md:h-48 rounded-full profile-img mx-auto">
+                        <div
+                            class="absolute -bottom-2 -right-2 bg-yellow-500 text-white rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-sm md:text-base"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="graduation-cap text-4xl md:text-5xl mb-4">🎓</div>
+                <h2
+                    class="text-lg md:text-2xl font-semibold text-yellow-300 mb-2 tracking-widest uppercase elegant-font">
+                    LỄ TỐT NGHIỆP ĐẠI HỌC</h2>
+                <h1
+                    class="text-3xl md:text-7xl font-extrabold text-white text-shadow leading-tight mb-4 md:mb-6 elegant-font">
+                    NGÀY TRỌNG ĐẠI
+                </h1>
+                <p class="mt-4 md:mt-6 text-base md:text-xl text-gray-200 max-w-2xl mx-auto">
+                    Trân trọng kính mời bạn bè thân thiết đến chung vui trong ngày quan trọng này!
+                </p>
+            </header>
+
+            <div id="countdown"
+                class="flex justify-center flex-wrap gap-2 md:gap-8 my-6 md:my-12 p-4 md:p-6 bg-white/10 rounded-xl backdrop-blur-lg border border-white/20">
+                <div class="countdown-item text-center p-3 md:p-4">
+                    <div id="days" class="text-2xl md:text-5xl font-extrabold text-yellow-300">00</div>
+                    <div class="text-xs md:text-sm uppercase tracking-wider text-gray-200 mt-1 font-semibold">Ngày</div>
+                </div>
+                <div class="text-2xl md:text-5xl text-white/50 font-extrabold self-center">:</div>
+                <div class="countdown-item text-center p-3 md:p-4">
+                    <div id="hours" class="text-2xl md:text-5xl font-extrabold text-yellow-300">00</div>
+                    <div class="text-xs md:text-sm uppercase tracking-wider text-gray-200 mt-1 font-semibold">Giờ</div>
+                </div>
+                <div class="text-2xl md:text-5xl text-white/50 font-extrabold self-center">:</div>
+                <div class="countdown-item text-center p-3 md:p-4">
+                    <div id="minutes" class="text-2xl md:text-5xl font-extrabold text-yellow-300">00</div>
+                    <div class="text-xs md:text-sm uppercase tracking-wider text-gray-200 mt-1 font-semibold">Phút</div>
+                </div>
+                <div class="text-2xl md:text-5xl text-white/50 font-extrabold self-center">:</div>
+                <div class="countdown-item text-center p-3 md:p-4">
+                    <div id="seconds" class="text-2xl md:text-5xl font-extrabold text-yellow-300">00</div>
+                    <div class="text-xs md:text-sm uppercase tracking-wider text-gray-200 mt-1 font-semibold">Giây</div>
+                </div>
+            </div>
+
+            <p class="mt-6 md:mt-8 text-base md:text-lg text-gray-200 font-medium">Thứ Sáu, ngày 11 tháng 10 năm 2025
+            </p>
+
+            <div class="mt-8 md:mt-12 floating">
+                <i class="fas fa-chevron-down text-xl md:text-2xl text-yellow-300"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="py-12 md:py-24 px-4 bg-white relative">
+        <div class="max-w-5xl mx-auto">
+            <section id="details" class="fade-in">
+                <h2 class="text-2xl md:text-4xl font-bold text-center mb-4 text-gray-800 elegant-font">Chi Tiết Sự Kiện
+                </h2>
+                <p class="text-base md:text-lg text-gray-600 text-center mb-8 md:mb-12 max-w-2xl mx-auto">Cùng nhau tạo
+                    nên những kỷ niệm
+                    đáng nhớ trong ngày trọng đại này</p>
+
+                <div class="grid md:grid-cols-2 gap-6 md:gap-12">
+                    <div class="card p-6 md:p-8 flex flex-col">
+                        <div class="text-4xl md:text-5xl mb-4 text-yellow-600 text-center">🎓</div>
+                        <h3 class="text-xl md:text-2xl font-bold mb-3 text-gray-900 text-center elegant-font">Lễ Tốt
+                            Nghiệp Chính
+                            Thức</h3>
+                        <p class="text-gray-500 mb-4 md:mb-6 font-medium text-center">(Thời gian làm lễ)</p>
+
+                        <!-- Ảnh địa điểm lễ tốt nghiệp -->
+                        <div class="mb-4 md:mb-6 rounded-lg overflow-hidden">
+                            <img id="graduation-location-img"
+                                src="https://tuyensinh.ntt.edu.vn/upload/photos/shares/658bd1bfa4dc6.jpg"
+                                alt="Hội trường Lầu 9" class="w-full h-40 md:h-48 object-cover gallery-img">
+                        </div>
+
+                        <div class="space-y-4 md:space-y-5 text-left">
+                            <div class="flex items-start">
+                                <span class="mr-3 mt-1 text-yellow-700 text-lg md:text-xl"><i
+                                        class="fas fa-clock"></i></span>
+                                <div>
+                                    <strong class="text-gray-900">Thời gian:</strong> Buổi sáng, 11/10/2025
+                                    <div class="text-xs md:text-sm text-gray-500 mt-1">Hãy đến sớm khoảng 30 phút để ổn
+                                        định chỗ
+                                        ngồi và chụp ảnh lưu niệm.</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="mr-3 mt-1 text-yellow-700 text-lg md:text-xl"><i
+                                        class="fas fa-map-marker-alt"></i></span>
+                                <div>
+                                    <strong class="text-gray-900">Địa điểm:</strong> Hội trường Lầu 9
+                                    <div class="text-xs md:text-sm text-gray-500 mt-1">331A-331B Đỗ Mười, P. An Phú
+                                        Đông.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-auto pt-6 md:pt-8 flex flex-col sm:flex-row gap-3">
+                            <a id="gcal-link" href="#" target="_blank"
+                                class="btn flex-1 text-center bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-4 md:px-6 rounded-lg flex items-center justify-center text-sm md:text-base">
+                                <i class="fas fa-calendar-plus mr-2"></i> Thêm vào Lịch
+                            </a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=331A-331B+Đỗ+Mười,+An+Phú+Đông"
+                                target="_blank"
+                                class="btn flex-1 text-center bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 px-4 md:px-6 rounded-lg flex items-center justify-center text-sm md:text-base">
+                                <i class="fas fa-map mr-2"></i> Xem Bản Đồ
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card p-6 md:p-8 flex flex-col">
+                        <div class="text-4xl md:text-5xl mb-4 text-yellow-600 text-center">🥂</div>
+                        <h3 class="text-xl md:text-2xl font-bold mb-3 text-gray-900 text-center elegant-font">Buổi Gặp
+                            Mặt & Ăn
+                            Mừng</h3>
+                        <p class="text-gray-500 mb-4 md:mb-6 font-medium text-center">(Phần "Quẩy" chính thức)</p>
+
+                        <!-- Ảnh minh họa buổi tiệc -->
+                        <div class="mb-4 md:mb-6 rounded-lg overflow-hidden">
+                            <img id="celebration-img"
+                                src="https://images.unsplash.com/photo-1532634922-8fe0b757fb13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                alt="Buổi tiệc ăn mừng" class="w-full h-40 md:h-48 object-cover gallery-img">
+                        </div>
+
+                        <div class="space-y-4 md:space-y-5 text-left">
+                            <div class="flex items-start">
+                                <span class="mr-3 mt-1 text-yellow-700 text-lg md:text-xl"><i
+                                        class="fas fa-clock"></i></span>
+                                <div>
+                                    <strong class="text-gray-900">Thời gian dự kiến:</strong> Khoảng 11:30 - 12:00 trưa
+                                    <div class="text-xs md:text-sm text-gray-500 mt-1">Ngay sau khi kết thúc buổi lễ
+                                        chính thức.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="mr-3 mt-1 text-yellow-700 text-lg md:text-xl"><i
+                                        class="fas fa-map-marker-alt"></i></span>
+                                <div>
+                                    <strong class="text-gray-900">Địa điểm:</strong> Sẽ được cập nhật sau
+                                    <div class="text-xs md:text-sm text-gray-500 mt-1">Mình sẽ thông báo chi tiết qua
+                                        nhóm chat/tin
+                                        nhắn sau khi chốt địa điểm.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="mt-auto pt-6 md:pt-8 text-center bg-yellow-50/70 p-3 md:p-4 rounded-lg border border-yellow-200">
+                            <p
+                                class="text-yellow-800 font-semibold italic flex items-center justify-center text-sm md:text-base">
+                                <i class="fas fa-glass-cheers mr-2"></i> Anh em nhớ giữ lịch trống cho phần tiệc tùng
+                                này nha!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Phần Gallery ảnh kỷ niệm -->
+            <section id="gallery" class="fade-in mb-12 md:mb-16">
+                <h2 class="text-2xl md:text-4xl font-bold text-center mb-4 text-gray-800 elegant-font">Hành Trình Đáng
+                    Nhớ</h2>
+                <p class="text-base md:text-lg text-gray-600 text-center mb-8 md:mb-12 max-w-2xl mx-auto">Những khoảnh
+                    khắc đã đưa tôi đến
+                    ngày hôm nay</p>
+
+                <div class="memory-grid" id="memory-grid">
+                    <!-- Ảnh kỷ niệm 1 -->
+                    <div class="memory-item">
+                        <img src="./img/1.jpg" alt="Kỷ niệm học tập" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Ảnh kỷ niệm 2 -->
+                    <div class="memory-item">
+                        <img src="./img/9.jpg" alt="Hoạt động nhóm" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Ảnh kỷ niệm 3 -->
+                    <div class="memory-item">
+                        <img src="./img/3.jpg" alt="Hoạt động nhóm" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Ảnh kỷ niệm 4 -->
+                    <div class="memory-item">
+                        <img src="./img/5.jpg" alt="Hoạt động nhóm" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Ảnh kỷ niệm 5 -->
+                    <div class="memory-item">
+                        <img src="./img/10.jpg" alt="Hoạt động nhóm" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Ảnh kỷ niệm 6 -->
+                    <div class="memory-item">
+                        <img src="./img/11.jpg" alt="Hoạt động nhóm" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Ảnh kỷ niệm 7 -->
+                    <div class="memory-item">
+                        <img src="./img/6.jpg" alt="Hoạt động nhóm" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Ảnh kỷ niệm 9 -->
+                    <div class="memory-item">
+                        <img src="./img/7.jpg" alt="Hoạt động nhóm" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Ảnh kỷ niệm 10 -->
+                    <div class="memory-item">
+                        <img src="./img/8.jpg" alt="Hoạt động nhóm" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Ảnh kỷ niệm 11 -->
+                    <div class="memory-item">
+                        <img src="./img/4.jpg" alt="Hoạt động nhóm" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Ảnh kỷ niệm 12 -->
+                    <div class="memory-item">
+                        <img src="./img/2.jpg" alt="Hoạt động nhóm" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Ảnh kỷ niệm 13 -->
+                    <div class="memory-item">
+                        <img src="./img/12.jpg" alt="Hoạt động nhóm" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Ảnh kỷ niệm 14 -->
+                    <div class="memory-item">
+                        <img src="./img/13.jpg" alt="Hoạt động nhóm" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Ảnh kỷ niệm 15 -->
+                    <div class="memory-item">
+                        <img src="./img/14.jpg" alt="Hoạt động nhóm" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Ảnh kỷ niệm 16 -->
+                    <div class="memory-item">
+                        <img src="./img/15.jpg" alt="Hoạt động nhóm" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Ảnh kỷ niệm 17 -->
+                    <div class="memory-item">
+                        <img src="./img/16.jpg" alt="Hoạt động nhóm" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Ảnh kỷ niệm 18 -->
+                    <div class="memory-item">
+                        <img src="./img/17.jpg" alt="Hoạt động nhóm" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Ảnh kỷ niệm 19 -->
+                    <div class="memory-item">
+                        <img src="./img/18.jpg" alt="Hoạt động nhóm" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Ảnh kỷ niệm 19 -->
+                    <div class="memory-item">
+                        <img src="./img/19.jpg" alt="Hoạt động nhóm" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Ảnh kỷ niệm 19 -->
+                    <div class="memory-item">
+                        <img src="./img/20.jpg" alt="Hoạt động nhóm" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Ảnh kỷ niệm 19 -->
+                    <div class="memory-item">
+                        <img src="./img/21.jpg" alt="Hoạt động nhóm" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Ảnh kỷ niệm 19 -->
+                    <div class="memory-item">
+                        <img src="./img/22.jpg" alt="Hoạt động nhóm" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Ảnh kỷ niệm 19 -->
+                    <div class="memory-item">
+                        <img src="./img/23.jpg" alt="Hoạt động nhóm" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Thêm ô "Còn nhiều kỷ niệm" -->
+                    <div class="memory-item more-memories" id="more-memories">
+                        <div class="more-memories-content">
+                            <i class="fas fa-images"></i>
+                            <p>Còn nhiều kỷ niệm khác...</p>
+                            <span>Chúng ta sẽ cùng ôn lại tại buổi lễ!</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <section id="message" class="fade-in">
+                <div
+                    class="max-w-3xl mx-auto p-6 md:p-10 rounded-2xl border border-gray-200 shadow-xl bg-gradient-to-br from-yellow-50 to-yellow-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-yellow-200 rounded-full -mr-12 -mt-12 opacity-30">
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-16 h-16 bg-yellow-300 rounded-full -ml-8 -mb-8 opacity-30">
+                    </div>
+
+                    <!-- Ảnh cá nhân trong phần lời nhắn -->
+                    <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8 mb-6 md:mb-8">
+                        <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden flex-shrink-0">
+                            <!-- THAY THẾ ẢNH CỦA BẠN BẰNG URL SAU KHI TẢI LÊN -->
+                            <img id="message-profile-img"
+                                src="https://scontent.fsgn23-1.fna.fbcdn.net/v/t39.30808-1/555641881_2021594518595163_2171926551360322654_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=110&ccb=1-7&_nc_sid=e99d92&_nc_ohc=vsyEKhHzoo0Q7kNvwGTgM6P&_nc_oc=AdlsRN4Nc3YiV9IWaVCGlIrv4xQSuU7qCLkXl8Kt2pkWU5OSvlzCzuYkYLhMuEAbipFXc3ftvbrcAUxmmo6LnjOL&_nc_zt=24&_nc_ht=scontent.fsgn23-1.fna&_nc_gid=Y1EkyepNqMOv4k94RUmR-w&oh=00_AfbGG2sphfopeiyaIL-CRxQdgyp8IECLQrdSDd68lncYEA&oe=68E2B050"
+                                alt="Ảnh của tôi" class="w-full h-full object-cover">
+                        </div>
+                        <div class="text-center md:text-left">
+                            <h2 class="text-2xl md:text-3xl font-extrabold mb-2 text-gray-900 elegant-font">Lời Chân
+                                Thành</h2>
+                            <p class="text-gray-600">Từ Trường Ngân</p>
+                        </div>
+                    </div>
+
+                    <div class="relative z-10">
+                        <p class="text-base md:text-lg text-gray-700 leading-relaxed text-center italic">
+                            "Bất kể bạn gặp ai, đó đều là người bạn cần gặp.
+
+                            Bất kể xảy ra chuyện gì, đó đều là chuyện nhất định phải xảy ra.
+
+                            Bất kể chuyện bắt đầu từ đâu, đó đều là thời điểm thích hợp.
+
+                            Bất kể là chuyện gì, đã qua chính là đã qua."
+                            . Sự có mặt của mọi người trong ngày đặc biệt
+                            này
+                            chính là <strong class="text-yellow-700">món quà lớn nhất</strong> rồi!"
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <section id="rsvp" class="fade-in text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 text-gray-900 elegant-font">Xác Nhận Tham Dự (RSVP)</h2>
+                <p class="text-base md:text-lg text-gray-600 mb-6 md:mb-8 max-w-xl mx-auto">
+                    Để mình dễ dàng sắp xếp chỗ ngồi và chuẩn bị chu đáo nhất, bạn vui lòng xác nhận tham dự sớm nhé!
+                </p>
+                <button id="rsvp-btn"
+                    class="btn bg-yellow-700 hover:bg-yellow-800 text-white font-bold py-3 md:py-4 px-8 md:px-12 text-lg md:text-xl rounded-lg shadow-lg flex items-center justify-center mx-auto">
+                    <i class="fas fa-reply mr-2"></i> Phản Hồi Ngay
+                </button>
+            </section>
+        </div>
+    </main>
+
+    <footer class="text-center py-8 md:py-12 bg-gradient-to-r from-gray-800 to-gray-900 text-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <!-- Ảnh nhỏ trong footer -->
+            <div class="flex justify-center mb-4 md:mb-6">
+                <div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-yellow-500">
+                    <!-- THAY THẾ ẢNH CỦA BẠN BẰNG URL SAU KHI TẢI LÊN -->
+                    <img id="footer-profile-img"
+                        src="https://scontent.fsgn23-1.fna.fbcdn.net/v/t39.30808-1/555641881_2021594518595163_2171926551360322654_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=110&ccb=1-7&_nc_sid=e99d92&_nc_ohc=vsyEKhHzoo0Q7kNvwGTgM6P&_nc_oc=AdlsRN4Nc3YiV9IWaVCGlIrv4xQSuU7qCLkXl8Kt2pkWU5OSvlzCzuYkYLhMuEAbipFXc3ftvbrcAUxmmo6LnjOL&_nc_zt=24&_nc_ht=scontent.fsgn23-1.fna&_nc_gid=Y1EkyepNqMOv4k94RUmR-w&oh=00_AfbGG2sphfopeiyaIL-CRxQdgyp8IECLQrdSDd68lncYEA&oe=68E2B050"
+                        alt="Ảnh của tôi" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <p class="text-xl md:text-2xl font-bold tracking-wider mb-3 md:mb-4 elegant-font">Hẹn gặp tụi bây tại Lầu 9!
+            </p>
+            <p class="text-base md:text-lg text-gray-300 mb-2">Thân ái, Hy┋ˢᵃᵞᴴꜟ</p>
+            <p class="text-xs md:text-sm text-gray-400 mb-4 md:mb-6">Mọi thắc mắc xin liên hệ trực tiếp.</p>
+
+            <div class="flex justify-center space-x-4 md:space-x-6 text-lg md:text-xl">
+                <a href="https://www.facebook.com/truong.ngan.758938" target="_blank"
+                    class="text-gray-300 hover:text-yellow-300 transition-colors">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" id="zalo-link" class="text-gray-300 hover:text-yellow-300 transition-colors">
+                    <i class="fab fa-zalo"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- RSVP Modal -->
+    <div id="rsvp-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 hidden z-50">
+        <div class="bg-white rounded-xl p-6 md:p-8 max-w-md w-full text-center shadow-2xl relative modal-content">
+            <button id="close-modal"
+                class="absolute top-3 md:top-4 right-3 md:right-4 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times text-lg md:text-xl"></i>
+            </button>
+
+            <div class="text-4xl md:text-5xl text-yellow-600 mb-3 md:mb-4">
+                <i class="fas fa-envelope-open-text"></i>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-gray-900">Cách Xác Nhận Tham Dự</h3>
+            <p class="text-gray-700 mb-4 md:mb-6 text-left text-sm md:text-base">
+                Vui lòng nhắn tin xác nhận trực tiếp cho mình qua <strong
+                    class="text-yellow-700">Zalo/Messenger</strong> để mình dễ dàng quản lý danh sách
+                khách mời nhất nhé.
+                <br><br>
+                Mong sớm nhận được tin vui từ bạn!
+            </p>
+            <button id="confirm-modal"
+                class="btn bg-yellow-700 hover:bg-yellow-800 text-white font-bold py-3 px-8 rounded-lg w-full">Đã
+                hiểu</button>
+        </div>
+    </div>
+
+    <!-- Zalo Modal -->
+    <div id="zalo-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 hidden z-50">
+        <div class="bg-white rounded-xl p-6 md:p-8 max-w-md w-full text-center shadow-2xl relative modal-content">
+            <button id="close-zalo-modal"
+                class="absolute top-3 md:top-4 right-3 md:right-4 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times text-lg md:text-xl"></i>
+            </button>
+
+            <div class="text-4xl md:text-5xl text-blue-500 mb-3 md:mb-4">
+                <i class="fab fa-zalo"></i>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-gray-900">Số Điện Thoại Zalo</h3>
+            <p class="text-gray-700 mb-3 md:mb-4 text-lg md:text-xl font-semibold">0345 678 910</p>
+            <p class="text-gray-600 mb-4 md:mb-6 text-xs md:text-sm">Liên hệ với mình qua Zalo nhé!</p>
+            <button id="confirm-zalo-modal"
+                class="btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg w-full">Đã
+                hiểu</button>
+        </div>
+    </div>
+
+    <script>
+        // ĐƯỜNG DẪN ẢNH CỦA BẠN - THAY THẾ BẰNG URL THỰC TẾ
+        // Lưu ý: Đường dẫn cục bộ "D:\Hi\img\avt2.jpg" sẽ không hoạt động trên web
+        // Bạn cần tải ảnh lên một dịch vụ lưu trữ ảnh và sử dụng URL công khai
+        const myImageUrl = "URL_ẢNH_CỦA_BẠN"; // THAY THẾ URL ẢNH CỦA BẠN Ở ĐÂY
+
+        // Ảnh mặc định nếu URL của bạn không tải được
+        const defaultImageUrl = "https://scontent.fsgn23-1.fna.fbcdn.net/v/t39.30808-1/555641881_2021594518595163_2171926551360322654_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=110&ccb=1-7&_nc_sid=e99d92&_nc_ohc=vsyEKhHzoo0Q7kNvwGTgM6P&_nc_oc=AdlsRN4Nc3YiV9IWaVCGlIrv4xQSuU7qCLkXl8Kt2pkWU5OSvlzCzuYkYLhMuEAbipFXc3ftvbrcAUxmmo6LnjOL&_nc_zt=24&_nc_ht=scontent.fsgn23-1.fna&_nc_gid=Y1EkyepNqMOv4k94RUmR-w&oh=00_AfbGG2sphfopeiyaIL-CRxQdgyp8IECLQrdSDd68lncYEA&oe=68E2B050";
+
+        // Khởi tạo ảnh khi trang tải
+        document.addEventListener('DOMContentLoaded', function () {
+            // Thiết lập ảnh cá nhân
+            const profileImages = [
+                'hero-profile-img',
+                'message-profile-img',
+                'footer-profile-img'
+            ];
+
+            profileImages.forEach(id => {
+                const imgElement = document.getElementById(id);
+                if (myImageUrl && myImageUrl.startsWith('http')) {
+                    imgElement.src = myImageUrl;
+                    // Thêm xử lý lỗi nếu ảnh không tải được
+                    imgElement.onerror = function () {
+                        this.src = defaultImageUrl;
+                    };
+                } else {
+                    imgElement.src = defaultImageUrl;
+                }
+            });
+
+            // Tạo hiệu ứng confetti
+            createConfetti();
+
+            // Tạo hiệu ứng lấp lánh cho ô "Còn nhiều kỷ niệm"
+            createSparkles();
+        });
+
+        // Countdown Timer
+        const countdown = () => {
+            const countDate = new Date('October 11, 2025 08:00:00').getTime();
+            const now = new Date().getTime();
+            const gap = countDate - now;
+
+            const second = 1000;
+            const minute = second * 60;
+            const hour = minute * 60;
+            const day = hour * 24;
+
+            const textDay = Math.floor(gap / day);
+            const textHour = Math.floor((gap % day) / hour);
+            const textMinute = Math.floor((gap % hour) / minute);
+            const textSecond = Math.floor((gap % minute) / second);
+
+            document.getElementById('days').innerText = textDay < 10 ? '0' + textDay : textDay;
+            document.getElementById('hours').innerText = textHour < 10 ? '0' + textHour : textHour;
+            document.getElementById('minutes').innerText = textMinute < 10 ? '0' + textMinute : textMinute;
+            document.getElementById('seconds').innerText = textSecond < 10 ? '0' + textSecond : textSecond;
+
+            if (gap < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById('countdown').innerHTML = '<h3 class="text-xl md:text-3xl font-bold text-yellow-300">Sự kiện đã diễn ra!</h3>';
+            }
+        };
+
+        const countdownInterval = setInterval(countdown, 1000);
+        countdown();
+
+        // Google Calendar Link
+        function createGoogleCalendarLink() {
+            const event = {
+                title: 'Lễ Tốt Nghiệp của Hy┋ˢᵃᵞᴴꜟ',
+                start: '20251011T080000',
+                end: '20251011T110000',
+                details: 'Tham dự Lễ Tốt Nghiệp Đại Học. Chúc mừng nhé!',
+                location: 'Hội trường Lầu 9, 331A-331B Đỗ Mười, P. An Phú Đông'
+            };
+
+            const formattedStart = event.start.replace(/-|:|\.\d+/g, '');
+            const formattedEnd = event.end.replace(/-|:|\.\d+/g, '');
+
+            const url = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(event.title)}&dates=${formattedStart}/${formattedEnd}&details=${encodeURIComponent(event.details)}&location=${encodeURIComponent(event.location)}&sf=true&output=xml`;
+
+            document.getElementById('gcal-link').href = url;
+        }
+        createGoogleCalendarLink();
+
+        // RSVP Modal
+        const rsvpBtn = document.getElementById('rsvp-btn');
+        const modal = document.getElementById('rsvp-modal');
+        const closeModalBtn = document.getElementById('close-modal');
+        const confirmModalBtn = document.getElementById('confirm-modal');
+
+        rsvpBtn.addEventListener('click', () => {
+            modal.classList.remove('hidden');
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+
+        confirmModalBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+            }
+        });
+
+        // Zalo Modal
+        const zaloLink = document.getElementById('zalo-link');
+        const zaloModal = document.getElementById('zalo-modal');
+        const closeZaloModalBtn = document.getElementById('close-zalo-modal');
+        const confirmZaloModalBtn = document.getElementById('confirm-zalo-modal');
+
+        zaloLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            zaloModal.classList.remove('hidden');
+        });
+
+        closeZaloModalBtn.addEventListener('click', () => {
+            zaloModal.classList.add('hidden');
+        });
+
+        confirmZaloModalBtn.addEventListener('click', () => {
+            zaloModal.classList.add('hidden');
+        });
+
+        zaloModal.addEventListener('click', (e) => {
+            if (e.target === zaloModal) {
+                zaloModal.classList.add('hidden');
+            }
+        });
+
+        // Tạo hiệu ứng confetti
+        function createConfetti() {
+            const container = document.getElementById('confetti-container');
+            const colors = ['#f0f0f0', '#d4af37', '#ffffff', '#ffd700', '#c0c0c0'];
+
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDelay = Math.random() * 5 + 's';
+                confetti.style.width = Math.random() * 10 + 5 + 'px';
+                confetti.style.height = Math.random() * 10 + 5 + 'px';
+                container.appendChild(confetti);
+            }
+        }
+
+        // Tạo hiệu ứng lấp lánh cho ô "Còn nhiều kỷ niệm"
+        function createSparkles() {
+            const moreMemories = document.getElementById('more-memories');
+
+            for (let i = 0; i < 8; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+
+                // Vị trí ngẫu nhiên trong phần tử
+                sparkle.style.left = Math.random() * 90 + 5 + '%';
+                sparkle.style.top = Math.random() * 90 + 5 + '%';
+                sparkle.style.animationDelay = Math.random() * 3 + 's';
+
+                moreMemories.appendChild(sparkle);
+            }
+        }
+
+        // Fade-in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', fadeInOnScroll);
+        // Trigger once on load
+        fadeInOnScroll();
+    </script>
+</body>
+
+</html>
