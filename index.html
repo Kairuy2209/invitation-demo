@@ -730,7 +730,7 @@
                 </div>
             </div>
 
-            <p class="mt-6 md:mt-8 text-base md:text-lg text-gray-200 font-medium">Thứ Sáu, ngày 11 tháng 10 năm 2025
+            <p class="mt-6 md:mt-8 text-base md:text-lg text-gray-200 font-medium">Thứ 7, ngày 11 tháng 10 năm 2025
             </p>
 
             <div class="mt-8 md:mt-12 floating">
@@ -1175,8 +1175,12 @@
         });
 
         // Countdown Timer
+
+
+        // Countdown Timer - ĐÃ SỬA THÀNH 9H SÁNG
         const countdown = () => {
-            const countDate = new Date('October 11, 2025 08:00:00').getTime();
+            // Sửa thành 9h sáng ngày 11/10/2025 với múi giờ Việt Nam (GMT+7)
+            const countDate = new Date('October 11, 2025 09:00:00 GMT+0700').getTime();
             const now = new Date().getTime();
             const gap = countDate - now;
 
@@ -1204,12 +1208,13 @@
         const countdownInterval = setInterval(countdown, 1000);
         countdown();
 
-        // Google Calendar Link
+
+        // Google Calendar Link - ĐÃ CẬP NHẬT THÀNH 9H SÁNG
         function createGoogleCalendarLink() {
             const event = {
                 title: 'Lễ Tốt Nghiệp của Hy┋ˢᵃᵞᴴꜟ',
-                start: '20251011T080000',
-                end: '20251011T110000',
+                start: '20251011T090000', // Đổi từ 080000 thành 090000
+                end: '20251011T120000',   // Kết thúc lúc 12h trưa
                 details: 'Tham dự Lễ Tốt Nghiệp Đại Học. Chúc mừng nhé!',
                 location: 'Hội trường Lầu 9, 331A-331B Đỗ Mười, P. An Phú Đông'
             };
@@ -1288,6 +1293,7 @@
                 container.appendChild(confetti);
             }
         }
+
 
         // Tạo hiệu ứng lấp lánh cho ô "Còn nhiều kỷ niệm"
         function createSparkles() {
