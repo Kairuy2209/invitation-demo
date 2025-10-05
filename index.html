@@ -262,6 +262,8 @@
 
             .music-text {
                 font-size: 0.75rem;
+                margin-right: 5px;
+                /* Thêm khoảng cách cho chữ "Nhạc nền" */
             }
 
             /* Trên mobile, mặc định thu nhỏ trình phát */
@@ -304,6 +306,17 @@
             .music-player:not(.minimized) .minimize-btn {
                 display: flex;
             }
+
+            /* Đảm bảo thanh volume slider hiển thị đầy đủ */
+            .music-player:not(.minimized) .volume-control {
+                width: 70px;
+                display: block !important;
+            }
+
+            .music-player:not(.minimized) .volume-slider {
+                width: 100%;
+                -webkit-appearance: slider-horizontal;
+            }
         }
 
         @media (max-width: 480px) {
@@ -313,15 +326,18 @@
             }
 
             .music-player:not(.minimized) {
-                max-width: 200px;
+                max-width: 220px;
+                /* Tăng kích thước tối đa để có không gian */
             }
 
             .volume-control {
                 display: none;
+                /* Ẩn thanh volume trên màn hình rất nhỏ */
             }
 
             .music-text {
                 font-size: 0.7rem;
+                margin-right: 5px;
             }
         }
 
@@ -356,7 +372,7 @@
             overflow-x: hidden;
         }
 
-        /* Hiệu ứng loading */
+        /* Hiệu ứng loading - ĐÃ SỬA LỖI CĂN GIỮA */
         #loading-screen {
             position: fixed;
             top: 0;
@@ -377,6 +393,13 @@
             color: white;
             position: relative;
             z-index: 10;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         .loading-spinner {
@@ -399,6 +422,8 @@
             font-size: 1.2rem;
             margin-top: 20px;
             font-weight: 500;
+            text-align: center;
+            width: 100%;
         }
 
         .loading-progress {
@@ -500,6 +525,49 @@
         .fade-out {
             opacity: 0;
             visibility: hidden;
+        }
+
+        /* Tối ưu loading screen cho mobile */
+        @media (max-width: 768px) {
+            .loading-content {
+                padding: 15px;
+            }
+
+            .loading-spinner {
+                width: 60px;
+                height: 60px;
+            }
+
+            .loading-logo {
+                font-size: 2.5rem;
+            }
+
+            .loading-text {
+                font-size: 1rem;
+            }
+
+            .loading-progress {
+                width: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .loading-spinner {
+                width: 50px;
+                height: 50px;
+            }
+
+            .loading-logo {
+                font-size: 2rem;
+            }
+
+            .loading-text {
+                font-size: 0.9rem;
+            }
+
+            .loading-progress {
+                width: 120px;
+            }
         }
 
         /* Phần CSS cũ giữ nguyên */
